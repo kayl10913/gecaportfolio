@@ -43,7 +43,7 @@ export default function Hero() {
               <button type="button" className="btn-hero-primary" onClick={() => scrollToSection('portfolio')}>
                 View My Work
               </button>
-              <a href={siteConfig.cvUrl} download="Angelica_D_Arano_CV.pdf" className="btn-hero-outline">
+              <a href={siteConfig.cvUrl} download="Angelica D. Arano - CV.pdf" className="btn-hero-outline">
                 <Download size={16} />
                 Download CV
               </a>

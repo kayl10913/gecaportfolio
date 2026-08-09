@@ -50,7 +50,7 @@ export default function Resume() {
           </div>
 
           <div className="flex flex-wrap gap-4 border-t border-slate-700 p-8">
-            <a href={siteConfig.resumeUrl} download="Angelica_D_Arano_CV.pdf" className="btn-gradient">
+            <a href={siteConfig.resumeUrl} download="Angelica D. Arano - CV.pdf" className="btn-gradient">
               <Download size={18} />
               Download Resume
             </a>
