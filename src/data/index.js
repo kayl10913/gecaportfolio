@@ -14,7 +14,7 @@ export const siteConfig = {
   phone: '0950-242-0093',
   location: 'Alitagtag, Batangas',
   social: {
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/angelica-arano-9b0828277/',
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com',
     youtube: 'https://youtube.com',
