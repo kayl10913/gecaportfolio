@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { Download, X } from 'lucide-react';
 import LazyImage from './LazyImage';
 import VideoPlayer from './VideoPlayer';
 
@@ -18,6 +18,7 @@ export default function PortfolioModal({ project, onClose }) {
   if (!project) return null;
 
   const hasGallery = project.gallery?.length > 0;
+  const hasMedia = project.video || project.document || hasGallery;
 
   return (
     <AnimatePresence>
@@ -37,7 +38,9 @@ export default function PortfolioModal({ project, onClose }) {
           aria-label="Close modal"
         />
         <motion.div
-          className="relative z-10 max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-slate-900 shadow-2xl"
+          className={`relative z-10 max-h-[90vh] w-full overflow-hidden rounded-2xl bg-slate-900 shadow-2xl ${
+            project.document ? 'max-w-5xl' : 'max-w-3xl'
+          }`}
           initial={{ scale: 0.95, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.95, y: 20 }}
@@ -51,11 +54,31 @@ export default function PortfolioModal({ project, onClose }) {
             <X size={20} />
           </button>
 
-          <div className={`grid gap-0 ${project.video || hasGallery ? 'md:grid-cols-2' : ''}`}>
-            {(project.video || hasGallery) && (
+          <div className={`grid gap-0 overflow-y-auto max-h-[90vh] ${hasMedia ? 'md:grid-cols-2' : ''}`}>
+            {hasMedia && (
               <div className="space-y-2 p-4 md:max-h-[90vh] md:overflow-y-auto">
                 {project.video && (
                   <VideoPlayer src={project.video} title={project.title} className="shadow-none ring-0" />
+                )}
+                {project.document && (
+                  <div className="overflow-hidden rounded-xl border border-slate-700 bg-slate-950">
+                    <iframe
+                      src={project.document}
+                      title={project.title}
+                      className="h-[60vh] w-full"
+                    />
+                    <div className="border-t border-slate-700 p-3">
+                      <a
+                        href={project.document}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold transition hover:gap-3"
+                      >
+                        <Download size={14} />
+                        Open full document
+                      </a>
+                    </div>
+                  </div>
                 )}
                 {hasGallery &&
                   project.gallery.map((src, i) => (
@@ -76,12 +99,8 @@ export default function PortfolioModal({ project, onClose }) {
               >
                 {project.title}
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                {project.description}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                {project.details}
-              </p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">{project.description}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">{project.details}</p>
               <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-400">
                 Tools
               </h3>

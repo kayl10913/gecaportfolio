@@ -2,6 +2,12 @@ import { profilePic, cvPdf } from '../assets/photos';
 import { videoAssets } from '../assets/media';
 import { filmProductionPhotos, newsInternPhotos } from '../assets/experiencePhotos';
 import { awardPhotos } from '../assets/awardPhotos';
+import {
+  featureWritingCover,
+  featureWritingEnglish,
+  featureWritingTagalog,
+  socialMediaCaptions,
+} from '../assets/journalism';
 
 export const siteConfig = {
   name: 'Angelica D. Araño',
@@ -275,12 +281,49 @@ export const portfolioProjects = [
     details:
       'Led the production design team, shaping visual identity and on-screen aesthetics for the project.',
   },
+  {
+    id: 9,
+    title: 'From Rock Bottom to Gradwaiting',
+    category: 'Writing Portfolio',
+    description: 'English feature writing on perseverance, academic struggle, and chasing a dream.',
+    image: featureWritingCover,
+    document: featureWritingEnglish,
+    tech: ['Feature Writing', 'English', 'Human-Interest Story'],
+    gallery: [],
+    details:
+      'A magazine-style feature following an IT student’s journey through financial hardship, remote learning, and night-shift work to reach his final semester and pursue a career as a systems analyst.',
+  },
+  {
+    id: 10,
+    title: 'Feature Writing (Tagalog)',
+    category: 'Writing Portfolio',
+    description: 'Tagalog feature article showcasing narrative writing in the local language.',
+    image: featureWritingCover,
+    document: featureWritingTagalog,
+    tech: ['Feature Writing', 'Tagalog', 'Storytelling'],
+    gallery: [],
+    details:
+      'Tagalog-language feature writing that highlights community-centered storytelling and audience-focused reporting.',
+  },
+  {
+    id: 11,
+    title: 'Social Media Captions',
+    category: 'Writing Portfolio',
+    description: 'Short-form captions crafted for digital news and social media platforms.',
+    image: featureWritingCover,
+    document: socialMediaCaptions,
+    tech: ['Digital Journalism', 'Social Media', 'Copywriting'],
+    gallery: [],
+    details:
+      'A collection of social media captions written for news and digital content, focused on clarity, engagement, and platform-appropriate tone.',
+  },
 ];
 
 export const portfolioCategories = [
   'All',
   'News Reporting',
   'Hosting',
+  'Writing Portfolio',
   'Video Editing',
   'Graphic Design',
 ];

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Play } from 'lucide-react';
+import { ArrowUpRight, FileText, Play } from 'lucide-react';
 import LazyImage from './LazyImage';
 
 function ProjectThumbnail({ project, featured }) {
@@ -22,6 +22,26 @@ function ProjectThumbnail({ project, featured }) {
         >
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy shadow-lg">
             <Play size={18} className="ml-0.5" fill="currentColor" />
+          </span>
+        </span>
+      </div>
+    );
+  }
+
+  if (project.document) {
+    return (
+      <div className={`relative ${height} w-full overflow-hidden bg-navy`}>
+        <LazyImage
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+        <span
+          className="absolute inset-0 flex items-center justify-center bg-navy/30 transition group-hover:bg-navy/40"
+          aria-hidden
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy shadow-lg">
+            <FileText size={18} />
           </span>
         </span>
       </div>
