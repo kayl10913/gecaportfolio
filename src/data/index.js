@@ -228,6 +228,19 @@ export const portfolioProjects = [
     details: 'Produced voice-over narration supporting narrative storytelling and audience engagement.',
   },
   {
+    id: 12,
+    title: 'Mobile Journalism',
+    category: 'News Reporting',
+    description: 'News production shot and edited on a smartphone for digital reporting.',
+    image:
+      'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
+    video: videoAssets.mobileJournalism,
+    tech: ['Mobile Journalism', 'Digital Reporting', 'Video Production'],
+    gallery: [],
+    details:
+      'A mobile journalism piece covering the full news workflow on a smartphone — shooting, reporting, and editing content for digital platforms.',
+  },
+  {
     id: 5,
     title: 'Long Drive',
     category: 'Video Editing',

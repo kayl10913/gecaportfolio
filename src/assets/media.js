@@ -1,11 +1,13 @@
 import healthNews from './videos/Health News.mp4';
 import kwentongPangbataVO from './videos/Kwentong Pangbata V.O.mp4';
+import mobileJournalism from './videos/Mobile journalism.mp4';
 import newsReportingVO from './videos/News Reporting V.O.mp4';
 import showbizNewsVO from './videos/Showbiz News V.O.mp4';
 
 export const videoAssets = {
   healthNews,
   kwentongPangbataVO,
+  mobileJournalism,
   newsReportingVO,
   showbizNewsVO,
 };
@@ -28,6 +30,15 @@ export const siteVideos = [
       'Voice-over work for news reporting packages — writing, verification, and broadcast delivery.',
     category: 'News Reporting',
     src: newsReportingVO,
+  },
+  {
+    id: 'mobile-journalism',
+    title: 'Mobile Journalism',
+    subtitle: 'On-the-Go News Production',
+    description:
+      'Mobile journalism reel capturing reporting, shooting, and editing news content on a smartphone.',
+    category: 'News Reporting',
+    src: mobileJournalism,
   },
   {
     id: 'showbiz-news-vo',
